@@ -1,9 +1,10 @@
 TEMPLATE = app
 
-QT += 3dcore 3drender 3dinput 3dquick qml quick 3dquickextras
+QT += 3dcore 3drender 3dinput 3dquick qml quick 3dquickextras core
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    customhandler.cpp
 
 RESOURCES += qml.qrc \
     assets.qrc
@@ -29,3 +30,9 @@ DEFINES += QT_DEPRECATED_WARNINGS
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    info.txt
+
+HEADERS += \
+    customhandler.h

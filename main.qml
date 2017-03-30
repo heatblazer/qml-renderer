@@ -1,54 +1,70 @@
-import QtQuick 2.1
-import Qt3D.Core 2.0
-import Qt3D.Render 2.0
-import Qt3D.Input 2.0
-import Qt3D.Extras 2.0
+import QtQuick 2.0
+import QtQuick.Scene3D 2.0
+import QtQuick.Layouts 1.0
+import "."
 
-Entity
+Item
 {
-    id: root
-    objectName: "root"
-    components: [ RenderSettings {
-            activeFrameGraph: SortedForwardRenderer {
-                id: renderer
-                camera: mainCamera
+    id: mainView
+    width: 1280
+    height: 768
+    visible: true
+
+    Scene3D {
+        anchors.fill: parent
+        focus: true
+        SocketScene { id: socketScene }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.LeftButton | Qt.RightButton | Qt.MidButton
+        onClicked: function() { console.log("Clicked button!!!"); }
+    }
+
+    RowLayout
+    {
+        id: buttonLayout
+        Layout.minimumHeight: exitButton.height
+        width: exitButton.width * 3
+        anchors.left: parent.left
+        spacing: 0
+
+        NewPushButton
+        {
+            id: exitButton
+            Layout.fillHeight: true
+            Layout.minimumWidth: parent.width / 70
+            text: "Quit"
+            onClicked: function() {
+                console.log("QUIT QUIT QUIT!!!");
+                Qt.quit(0);
             }
-        },
-        InputSettings {}
-    ]
+        }
 
-    BasicCamera
-    {
-        id: mainCamera
-        position: Qt.vector3d(0.0, 3.5, 25.0)
-        viewCenter: Qt.vector3d(0.0, 3.5, 0.0)
-    }
+        NewPushButton
+        {
+            id: testButton1
+            Layout.fillHeight: true
+            Layout.minimumWidth: parent.width / 70
+            text: "Test1"
+            onClicked: function() {
+                console.log("QUIT QUIT QUIT!!!");
+                Qt.quit(0);
+            }
+        }
 
-    FirstPersonCameraController
-    {
-        camera: mainCamera
-    }
-
-    /**
-      Phong material
-      */
-    PhongMaterial
-    {
-        id: redAdsMaterial
-        ambient: Qt.rgba(0.02, 0.02, 0.02, 1.0)
-        diffuse: Qt.rgba(0.8, 0.0, 0.0, 1.0)
-    }
-
-    PlaneEntry
-    {
-        id: floor
-        width: 100
-        height: 100
-        resolution: Qt.size(20, 20)
-    }
-
-    Socket
-    {
-        x: -8
+        NewPushButton
+        {
+            id: testButton2
+            Layout.fillHeight: true
+            Layout.minimumWidth: parent.width / 70
+            text: "Test2"
+            onClicked: function() {
+                console.log("QUIT QUIT QUIT!!!");
+                Qt.quit(0);
+            }
+        }
     }
 }
+

@@ -1,0 +1,4 @@
+connecting singals/slots PyQt
+http://stackoverflow.com/questions/19131084/pyqt5-qml-signal-to-python-slot
+
+

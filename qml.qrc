@@ -1,11 +1,12 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>MainForm.ui.qml</file>
         <file>Socket.qml</file>
         <file>RenderableEntity.qml</file>
         <file>SortedForwardRenderer.qml</file>
         <file>BasicCamera.qml</file>
         <file>PlaneEntry.qml</file>
+        <file>NewPushButton.qml</file>
+        <file>SocketScene.qml</file>
     </qresource>
 </RCC>

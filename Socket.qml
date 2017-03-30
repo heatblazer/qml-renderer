@@ -15,7 +15,7 @@ Entity
     {
         id: socket
         source: "assets/socket.obj"
-        position: Qt.vector3d(root.x, root.y, root.z)
+        position: Qt.vector3d(root.x ,root.y ,root.z)
         scale: 0.03 * root.scale
 
         material: DiffuseMapMaterial {
