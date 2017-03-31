@@ -15,6 +15,11 @@ Entity
 
     components: [transform, mesh, root.material]
 
+    BasicCamera
+    {
+
+    }
+
     Transform
     {
         id: transform

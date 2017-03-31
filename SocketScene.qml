@@ -17,12 +17,14 @@ Entity
         InputSettings {}
     ]
 
+
     BasicCamera
     {
         id: mainCamera
         position: Qt.vector3d(0.0, 3.5, 25.0)
         viewCenter: Qt.vector3d(0.0, 3.5, 0.0)
     }
+
 
     FirstPersonCameraController
     {
@@ -50,11 +52,39 @@ Entity
     // our socket data
     Socket
     {
+        id: socket
         x: -1
         y: 4
+        z: 0
     }
 
-    /*
+    function incZ()
+    {
+        socket.z++;
+    }
 
-    */
+    function decZ()
+    {
+        socket.z--;
+    }
+
+    function incX()
+    {
+        socket.x++;
+    }
+
+    function decX()
+    {
+        socket.x--;
+    }
+
+    function incY()
+    {
+        socket.y++;
+    }
+
+    function decY()
+    {
+        socket.y--;
+    }
 }

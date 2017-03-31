@@ -11,8 +11,12 @@ Item
     visible: true
 
     Scene3D {
+        id: scene3d
         anchors.fill: parent
+        anchors.margins: 10
         focus: true
+        aspects: ["input", "logic"]
+        cameraAspectRatioMode: Scene3D.AutomaticAspectRatio
         SocketScene { id: socketScene }
     }
 
@@ -32,37 +36,68 @@ Item
 
         NewPushButton
         {
-            id: exitButton
+            id: incX
             Layout.fillHeight: true
             Layout.minimumWidth: parent.width / 70
-            text: "Quit"
+            text: "X"
             onClicked: function() {
-                console.log("QUIT QUIT QUIT!!!");
-                Qt.quit(0);
+                socketScene.incX();
             }
         }
 
         NewPushButton
         {
-            id: testButton1
+            id: incY
             Layout.fillHeight: true
             Layout.minimumWidth: parent.width / 70
-            text: "Test1"
+            text: "Y"
             onClicked: function() {
-                console.log("QUIT QUIT QUIT!!!");
-                Qt.quit(0);
+                console.log("setting socket + 10");
+                socketScene.incY();
             }
         }
 
         NewPushButton
         {
-            id: testButton2
+            id: incZ
             Layout.fillHeight: true
             Layout.minimumWidth: parent.width / 70
-            text: "Test2"
+            text: "Z"
             onClicked: function() {
-                console.log("QUIT QUIT QUIT!!!");
-                Qt.quit(0);
+                socketScene.incZ();
+            }
+        }
+
+        NewPushButton
+        {
+            id: decX
+            Layout.fillHeight: true
+            Layout.minimumWidth: parent.width / 70
+            text: "-X"
+            onClicked: function() {
+                socketScene.decX();
+            }
+        }
+
+        NewPushButton
+        {
+            id: decY
+            Layout.fillHeight: true
+            Layout.minimumWidth: parent.width / 70
+            text: "-Y"
+            onClicked: function() {
+                socketScene.decY();
+            }
+        }
+
+        NewPushButton
+        {
+            id: decZ
+            Layout.fillHeight: true
+            Layout.minimumWidth: parent.width / 70
+            text: "-Z"
+            onClicked: function() {
+                socketScene.decZ();
             }
         }
     }
