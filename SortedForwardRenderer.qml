@@ -36,7 +36,7 @@ TechniqueFilter
                 ClearBuffers
                 {
                     buffers: ClearBuffers.ColorDepthBuffer
-                    clearColor: "red"
+                    clearColor: "blue"
 
                     SortPolicy
                     {
